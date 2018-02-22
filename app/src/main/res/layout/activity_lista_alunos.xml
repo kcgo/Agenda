@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:orientation="vertical"
+    tools:context="sample.tqi.com.br.agenda.ListaAlunosActivity">
+
+   <ListView
+       android:id="@+id/lista_alunos"
+       tools:listitem="@layout/activity_lista_alunos"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+
+       <Button
+           android:id="@+id/novo_aluno"
+           android:layout_width="54dp"
+           android:layout_height="54dp"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="16dp"
+           android:layout_marginRight="16dp"
+           android:text="+"
+           android:elevation="10dp"
+           android:textColor="#ffffffff"
+           android:textSize="40sp"
+           android:background="@drawable/fundo"
+           android:clickable="true"/>
+
+
+
+</RelativeLayout>
