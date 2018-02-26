@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.util.zip.Inflater;
 
+import sample.tqi.com.br.agenda.dao.AlunoDAO;
 import sample.tqi.com.br.agenda.modelo.Aluno;
 
 public class FormularioActivity extends AppCompatActivity {
@@ -40,7 +41,11 @@ public class FormularioActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_formaulario_ok:
                 Aluno aluno = helper.pegaAluno();
-                Toast.makeText( FormularioActivity.this, "Aluno" + aluno.getNome()+ " Salvo", Toast.LENGTH_SHORT).show();
+                AlunoDAO dao = new AlunoDAO( this );
+                dao.insere(aluno);
+                dao.close();
+
+                Toast.makeText( FormularioActivity.this, "Aluno" +  aluno.getNome() + "Salvo", Toast.LENGTH_SHORT).show();
                 finish();
                 break;
         }

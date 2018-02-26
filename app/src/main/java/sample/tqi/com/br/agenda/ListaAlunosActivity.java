@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import sample.tqi.com.br.agenda.dao.AlunoDAO;
+import sample.tqi.com.br.agenda.modelo.Aluno;
 
 public class ListaAlunosActivity extends AppCompatActivity {
 
@@ -16,14 +20,17 @@ public class ListaAlunosActivity extends AppCompatActivity {
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_lista_alunos );
+        AlunoDAO dao = new AlunoDAO( this );
 
-        String[] alunos = {"Daniel", "Ronaldo", "Jeferson", "Felipe"};
-        final ListView ListaAlunos= findViewById( R.id.lista_alunos );
-        ArrayAdapter<String> adapter =  new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, alunos );
+        List <Aluno> alunos = dao.buscaAlunos();
+        dao.close();
+
+        ListView ListaAlunos = findViewById( R.id.lista_alunos );
+        ArrayAdapter <Aluno> adapter = new ArrayAdapter <Aluno>( this, android.R.layout.simple_list_item_1, alunos );
         ListaAlunos.setAdapter( adapter );
 
-        Button novoAluno =  findViewById( R.id.novo_aluno );
-        novoAluno.setOnClickListener( new View.OnClickListener(){
+        Button novoAluno = findViewById( R.id.novo_aluno );
+        novoAluno.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick( View v ) {
                 Intent intent = new Intent( ListaAlunosActivity.this, FormularioActivity.class );

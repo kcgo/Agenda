@@ -1,4 +1,4 @@
-#Thu Feb 22 13:06:42 BRT 2018
-base.0=C\:\\Users\\katia.goncalves\\Documents\\Agenda\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\27
+#Mon Feb 26 15:07:13 BRT 2018
+base.0=C\:\\Users\\katia.goncalves\\Documents\\Agenda\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
 path.0=classes.dex
 renamed.0=classes.dex
